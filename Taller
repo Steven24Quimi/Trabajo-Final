@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compre su ticket con seguridad :D</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="img/Logotipo.png" type="image/x-icon">
+
+
+</head>
+
+<body>
+    <header>
+        <div class="logo">SQPC</div>
+        <nav>
+            <ul>
+                <li><a href="#">Alojamientos</a></li>
+                <li><a href="#">Vuelos</a></li>
+                <li><a href="#">Paquetes</a></li>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Soporte Técnico</a></li>
+            </ul>
+        </nav>
+        <div class="title-container">
+            <h1>No Te Pierdas La Oportunidad de Viajar Seguro</h1>
+            <img src="img/viajar.png" alt="Logotipo de la empresa" class="logo">
+        </div>
+    </header>
+
+    <main>
+        <section class="offer">
+            <p>Viaja Seguro: Tu portal confiable y gratuito para la compra de boletos de viaje.</p>
+        </section>
+
+        <section class="search-flights">
+            <h1>Vuelos</h1>
+            <div class="form-container">
+                <label for="opciones-input">Ciudades a Viajar:</label>
+                <input list="opciones" id="opciones-input" name="opciones">
+                <datalist id="opciones">
+                    <option value="Perú">
+                    <option value="Francia">
+                    <option value="España">
+                    <option value="Estados Unidos">
+                    <option value="Japón">
+                    <option value="Islandia">
+                    <option value="Argentina">
+                    <option value="Ecuador">
+                </datalist>
+                <button onclick="mostrarCiudades()">Aceptar</button>
+            </div>
+            <div class="result" id="resultado">
+                <p id="texto"></p>
+            </div>
+        </section>
+    </main>
+
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+        <title>Lugares de Interés</title>
+        <style>
+            .location {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .location img {
+                width: 300px;
+                height: auto;
+            }
+
+            .descripcion {
+                font-size: 14px;
+                color: #555;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- Select para escoger un país -->
+        <select id="opciones-input" onchange="mostrarCiudades()">
+            <option value="">Selecciona un país</option>
+            <option value="Perú">Perú</option>
+            <option value="Francia">Francia</option>
+            <option value="España">España</option>
+            <option value="Estados Unidos">Estados Unidos</option>
+            <option value="Japón">Japón</option>
+            <option value="Islandia">Islandia</option>
+            <option value="Argentina">Argentina</option>
+            <option value="Ecuador">Ecuador</option>
+        </select>
+
+        <!-- Contenedor para mostrar los resultados -->
+        <div id="resultado"></div>
+
+        <script>
+            function mostrarCiudades() {
+                const paisSeleccionado = document.getElementById('opciones-input').value;
+                const contenido = document.getElementById('resultado');
+                contenido.innerHTML = ''; // Limpiar el contenido previo
+
+                let lugares;
+
+                switch (paisSeleccionado) {
+                    case 'Perú':
+                        lugares = [
+                            {
+                                nombre: 'Machu Pichu', imagen: 'img/Machu Pichu - Peru.jpg',
+                                descripcion:
+                                    "Es un tesoro histórico y un destino asombroso. Desde el pintoresco pueblo de Aguas Calientes, se puede acceder a hoteles con piscina y vistas impresionantes, como el Belmond Sanctuary Lodge y el Inkaterra Machu Picchu Pueblo Hotel, que combinan una historia fascinante con una belleza natural única"
+                            },
+
+                            {
+                                nombre: "Cañon Colca", imagen: "img/Cañon Colca.jpg",
+                                descripcion:
+                                    "Es uno de los más profundos del mundo, conocido por sus vistas espectaculares y la observación de cóndores. La región ofrece alojamientos y actividades como aguas termales y senderismo, con hoteles destacados como el Colca Lodge Spa & Hot Springs y el Belmond Las Casitas."
+                            },
+
+                            {
+                                nombre: "Reserva Nacional de Paracas", imagen: "img/Paracas.jpg",
+                                descripcion:
+                                    "Se destaca por sus paisajes desérticos, playas vírgenes y rica vida marina, que incluye leones marinos y aves. Los hoteles recomendados en la zona son el Hotel Paracas, a Luxury Collection Resort, y el DoubleTree Resort by Hilton Hotel Paracas."
+                            },
+
+                            {
+                                nombre: "Baños Termales de San Mateo", imagen: "img/Termales.jpg",
+                                descripcion:
+                                    "Ofrece relajación en aguas termales rodeadas de hermosos paisajes montañosos. Los visitantes pueden hospedarse en el acogedor Hospedaje San Mateo o el rústico Hotel Colonial San Mateo, ambos brindando una estancia cómoda cerca de las relajantes aguas termales."
+                            },
+
+                            {
+                                nombre: "Islas Ballestas", imagen: "img/Islas Ballestas.jpg",
+                                descripcion:
+                                    "Son famosas por su abundante vida silvestre, que incluye leones marinos, pingüinos y numerosas aves marinas. Los hoteles recomendados en la zona son el Hotel La Hacienda Bahía Paracas y el Aranwa Paracas Resort & Spa."
+                            },
+                        ];
+                        break;
+
+                    case 'Francia':
+                        lugares = [
+                            {
+                                nombre: 'Torre Eiffel', imagen: 'img/PARIS, TORRE.jpg',
+                                descripcion:
+                                    'Disfruta de vistas panorámicas de París desde la Torre Eiffel y alójate en el Shangri-La Hotel Paris, que ofrece lujo y vistas directas a la Torre.'
+                            },
+                            {
+                                nombre: 'Museo Del Louvre', imagen: 'img/Museo.jpg',
+                                descripcion:
+                                    'Explora obras maestras como la Mona Lisa en el Museo del Louvre y hospédate en el elegante Hotel du Louvre, ubicado justo al lado del museo.'
+                            },
+                            {
+                                nombre: "Musee de Orsay", imagen: " img/Museo de Orsay.jpg",
+                                descripcion:
+                                    "Admira la extensa colección de arte impresionista en el Musée d'Orsay y alójate en el encantador Hôtel d'Orsay, a pocos pasos del museo."
+                            },
+                            {
+                                nombre: "Arco de Triunfo", imagen: "img/Arco de Triunfo.jpg",
+                                descripcion:
+                                    "Sube al Arco de Triunfo para vistas espectaculares de París y alójate en el lujoso Hôtel Champs Élysées Plaza, cerca de los Campos Elíseos."
+                            },
+                            {
+                                nombre: "Palacio Versalles", imagen: "img/Palacio Versalles.jpg",
+                                descripcion:
+                                    "Visita el opulento Palacio de Versalles y sus jardines magníficos, y hospédate en el Waldorf Astoria Versailles - Trianon Palace para una experiencia de lujo cercana."
+                            },
+                            {
+                                nombre: "Rio Sena", imagen: "img/Rio Sena.jpg",
+                                descripcion:
+                                    "Disfruta de un crucero por el Río Sena para ver los monumentos más emblemáticos de París y alójate en el Hotel Le Notre Dame Saint Michel, con vistas al río y la Catedral de Notre Dame."
+                            },
+                        ];
+                        break;
+
+                    case 'España':
+                        lugares = [
+                            {
+                                nombre: 'La Sagrada Familia', imagen: 'img/Sagrada Familia - España.jpg',
+                                descripcion:
+                                    'Admira la impresionante arquitectura de la Sagrada Familia en Barcelona y alójate en el Ayre Hotel Rosellón, que ofrece vistas directas a la basílica.'
+                            },
+                            {
+                                nombre: 'Parque Güell', imagen: 'img/Parque Güell.jpg',
+                                descripcion:
+                                    'Disfruta del colorido y singular Parque Güell de Gaudí en Barcelona y alójate en el Hotel Casa Fuster, un hotel de lujo cerca del parque.'
+                            },
+                            {
+                                nombre: 'La Mezquita de Córdoba', imagen: 'img/Mezquita de Córdoba.jpg',
+                                descripcion:
+                                    'Explora la magnífica Mezquita de Córdoba, un testimonio de la arquitectura islámica, y hospédate en el Hotel Hospes Palacio del Bailío, un lujoso hotel histórico cercano.'
+                            },
+                            {
+                                nombre: 'Catedral de Burgos', imagen: 'img/Catedral de Burgos.jpg',
+                                descripcion:
+                                    'Visita la impresionante Catedral de Burgos, Patrimonio de la Humanidad, y alójate en el NH Collection Palacio de Burgos, un elegante hotel ubicado en un edificio histórico.'
+                            },
+                            {
+                                nombre: 'La Giralda', imagen: 'img/La Giralda.jpg',
+                                descripcion:
+                                    'Visita la icónica Giralda y la Catedral de Sevilla y alójate en el Hotel Casa 1800 Sevilla, un encantador hotel boutique cerca de la catedral.'
+                            },
+                            {
+                                nombre: "Santa Maria de la Sede", imagen: "img/Santa María de la Sede.jpg",
+                                descripcion:
+                                    "Explora la majestuosa Catedral de Santa María de la Sede en Sevilla, la catedral gótica más grande del mundo, y alójate en el Hotel Alfonso XIII, un lujoso hotel histórico cercano."
+                            },
+                        ];
+                        break;
+
+                    case 'Estados Unidos':
+                        lugares = [
+                            {
+                                nombre: "San Francisco, California", imagen: "img/San Francisco, California.jpg",
+                                descripcion:
+                                    "Explora la vibrante ciudad de San Francisco, incluyendo el icónico Golden Gate Bridge, y alójate en el Fairmont San Francisco, que ofrece lujo y vistas impresionantes de la ciudad."
+                            },
+                            {
+                                nombre: "Parque Nacional de Yosemite", imagen: "img/Parque Nacional de Yosemite.jpg",
+                                descripcion:
+                                    "Descubre las majestuosas cascadas y formaciones rocosas del Parque Nacional de Yosemite y hospédate en el The Ahwahnee Hotel, un histórico hotel ubicado dentro del parque."
+                            },
+                            {
+                                nombre: 'Estatua de la Libertad', imagen: 'img/Estatua de la Libertad.webp',
+                                descripcion:
+                                    'Visita la emblemática Estatua de la Libertad en Nueva York y alójate en el The Ritz-Carlton New York, Battery Park, con vistas espectaculares a la estatua y el puerto.'
+                            },
+                            {
+                                nombre: "Parque nacional de los Everglades", imagen: "img/Parque nacional de los Everglades.jpg",
+                                descripcion:
+                                    "Explora la diversa vida silvestre y los ecosistemas únicos del Parque Nacional de los Everglades y hospédate en el Ivey House Bed & Breakfast, un acogedor alojamiento cercano al parque."
+                            },
+                            {
+                                nombre: 'Grand Canyon', imagen: 'img/Grand Canyon.jpg',
+                                descripcion:
+                                    'Maravíllate con las impresionantes vistas del Grand Canyon y alójate en el El Tovar Hotel, un histórico hotel situado justo en el borde del cañón.'
+                            },
+                            {
+                                nombre: 'Times Square', imagen: 'img/Times Square.jpg',
+                                descripcion:
+                                    'Disfruta del vibrante ambiente de Times Square en Nueva York y alójate en el Marriott Marquis Times Square, ubicado en el corazón de esta icónica zona.'
+                            },
+                        ];
+                        break;
+
+                    case 'Japón':
+                        lugares = [
+                            {
+                                nombre: 'Tokio', imagen: 'img/Tokio.webp',
+                                descripcion:
+                                    'Sumérgete en la vibrante metrópolis de Tokio, famosa por su mezcla de modernidad y tradición, y alójate en el lujoso The Ritz-Carlton, Tokyo, que ofrece vistas panorámicas de la ciudad y el Monte Fuji.'
+                            },
+                            {
+                                nombre: 'Monte Fuji', imagen: 'img/Monte Fuji.jpg',
+                                descripcion:
+                                    'Admira el majestuoso Monte Fuji, el pico más alto de Japón, y alójate en el Fuji View Hotel, que ofrece impresionantes vistas de la montaña y acceso a actividades al aire libre.'
+                            },
+                            {
+                                nombre: 'Templo Kinkaku-ji', imagen: 'img/Templo Kinkaku-ji.jpg',
+                                descripcion:
+                                    'Visita el resplandeciente Templo Kinkaku-ji, también conocido como el Pabellón Dorado, en Kioto y alójate en el The Ritz-Carlton, Kyoto, que combina lujo con la serenidad de la tradición japonesa.'
+                            },
+                            {
+                                nombre: "Hakone", imagen: "img/Hakone.webp",
+                                descripcion:
+                                    "Relájate en los onsen (baños termales) de Hakone, disfruta de vistas al Monte Fuji, y hospédate en el Hakone Ginyu, un ryokan de lujo con vistas espectaculares y auténtica hospitalidad japonesa."
+                            },
+                            {
+                                nombre: "Kamakura", imagen: "img/Kamakura.jpg",
+                                descripcion:
+                                    "Explora los antiguos templos y santuarios de Kamakura, incluyendo el Gran Buda, y alójate en el Kamakura Prince Hotel, que ofrece comodidad y vistas al océano."
+                            },
+                            {
+                                nombre: "Osaka", imagen: "img/Osaka.jpg",
+                                descripcion:
+                                    "Descubre la vibrante ciudad de Osaka, conocida por su gastronomía y vida nocturna, y alójate en el Conrad Osaka, que ofrece lujo moderno y vistas panorámicas de la ciudad."
+                            },
+                        ];
+                        break;
+
+                    case 'Islandia':
+                        lugares = [
+                            {
+                                nombre: 'Laguna Azul', imagen: 'img/Laguna Azul-Islandia.jpg',
+                                descripcion:
+                                    'Relájate en las aguas geotermales del Blue Lagoon y alójate en el lujoso The Retreat at Blue Lagoon Iceland.'
+                            },
+                            {
+                                nombre: 'Cascada Seljalandsfoss', imagen: 'img/Cascada.jpg',
+                                descripcion:
+                                    "Admira la majestuosa Seljalandsfoss y hospédate en el cercano y acogedor Country Hotel Anna.."
+                            },
+
+                            {
+                                nombre: "Reykjavik", imagen: "img/Reykjavik.jpg",
+                                descripcion:
+                                    "Explora la vibrante capital de Islandia, conocida por su arquitectura única y vida nocturna, y alójate en el lujoso Hotel Borg by Keahotels, que ofrece elegancia clásica y modernas comodidades."
+                            },
+
+                            {
+                                nombre: "Parque Nacional Thingvellir", imagen: "img/Parque Nacional Thingvellir.jpg",
+                                descripcion:
+                                    "Descubre el Parque Nacional Thingvellir, un sitio de importancia histórica y geológica, y alójate en el ION Adventure Hotel, un hotel boutique que combina diseño moderno con la naturaleza islandesa."
+                            },
+                            {
+                                nombre: "Geysir", imagen: "img/Geysir.jpg",
+                                descripcion:
+                                    "Visita la área geotermal de Geysir, famosa por sus impresionantes géiseres, y hospédate en el Hotel Geysir, que ofrece vistas cercanas a las maravillas geotermales"
+                            },
+                        ];
+                        break;
+
+                    case 'Argentina':
+                        lugares = [
+                            {
+                                nombre: 'Buenos Aires', imagen: 'img/Buenos Aire.jpg',
+                                descripcion:
+                                    'Explora la vibrante capital de Argentina, famosa por su arquitectura, cultura y tango, y alójate en el elegante Alvear Palace Hotel, que ofrece lujo y servicio de primera clase en el corazón de la ciudad.'
+                            },
+                            {
+                                nombre: 'Cataratas del Iguazú', imagen: 'img/Cataratas.webp',
+                                descripcion:
+                                    'Admira las impresionantes Cataratas del Iguazú, una de las maravillas naturales del mundo, y alójate en el Gran Meliá Iguazú, que ofrece vistas espectaculares de las cataratas y acceso directo al parque nacional.'
+                            },
+                            {
+                                nombre: "Bariloche", imagen: "img/Bariloche.jpg",
+                                descripcion:
+                                    "Descubre la belleza de Bariloche, con sus lagos y montañas en la Patagonia, y alójate en el Llao Llao Hotel & Resort, que ofrece vistas impresionantes y actividades al aire libre."
+                            },
+
+                            {
+                                nombre: "Salta", imagen: "img/Salta.jpg",
+                                descripcion:
+                                    "Explora la histórica ciudad de Salta, conocida por su arquitectura colonial y paisajes andinos, y alójate en el encantador Legado Mítico Salta, un hotel boutique que combina historia y confort en el corazón de la ciudad."
+                            },
+
+                            {
+                                nombre: "calafate", imagen: "img/El Calafate.jpg",
+                                descripcion:
+                                    "Visita el glaciar Perito Moreno en El Calafate, una maravilla natural en la Patagonia, y hospédate en el EOLO - Patagonia's Spirit, un exclusivo lodge con vistas panorámicas de la estepa patagónica y los Andes."
+                            },
+                            {
+                                nombre: "ushuaia", imagen: "img/Ushuaia.jpg",
+                                descripcion:
+                                    "Descubre Ushuaia, la ciudad más austral del mundo, y hospédate en el Arakur Ushuaia Resort & Spa, con vistas espectaculares al Canal Beagle."
+                            },
+                        ];
+                        break;
+
+                    case 'Ecuador':
+                        lugares = [
+                            {
+                                nombre: 'Quito', imagen: 'img/Quito.jpg',
+                                descripcion:
+                                    'Explora la capital de Ecuador, Quito, conocida por su bien conservado centro histórico colonial y alójate en el lujoso Casa Gangotena, un hotel boutique ubicado en una mansión restaurada en el corazón de la ciudad.'
+                            },
+                            {
+                                nombre: 'Galápagos', imagen: 'img/Galapagos.jpg',
+                                descripcion:
+                                    'Visita las Islas Galápagos, famosas por su biodiversidad única, y alójate en el Pikaia Lodge, que ofrece lujo y sostenibilidad en la isla Santa Cruz.'
+                            },
+
+                            {
+                                nombre: "cuenca", imagen: "img/cuenca.jpg",
+                                descripcion:
+                                    "Descubre la ciudad colonial de Cuenca, Patrimonio de la Humanidad, y hospédate en el encantador Mansion Alcazar, un hotel boutique que combina historia y confort."
+                            },
+
+                            {
+                                nombre: "Baños de Agua Termales", imagen: "img/Baños de Agua Santa.jpg",
+                                descripcion:
+                                    "Relájate en Baños de Agua Santa, conocido por sus aguas termales y actividades de aventura, y alójate en el Luna Volcán, Adventure Spa, que ofrece vistas impresionantes y tratamientos de spa."
+                            },
+
+                            {
+                                nombre: "Parque Nacional Cotopaxi", imagen: "img/Parque Nacional Cotopax.jpg",
+                                descripcion:
+                                    "Explora el Parque Nacional Cotopaxi, hogar del majestuoso volcán Cotopaxi, y hospédate en la Hacienda San Agustín de Callo, una histórica hacienda con vistas al volcán y la naturaleza circundante."
+                            },
+
+                        ];
+                        break;
+
+                    default:
+                        const texto = document.createElement('p');
+                        texto.textContent = 'No se encontró información para esta ciudad';
+                        contenido.appendChild(texto);
+                        return;
+                }
+
+                lugares.forEach(lugar => {
+                    const div = document.createElement('div');
+                    div.className = 'location';
+
+                    const lugarTexto = document.createElement('h3');
+                    lugarTexto.textContent = lugar.nombre;
+
+                    const lugarImagen = document.createElement('img');
+                    lugarImagen.src = lugar.imagen;
+                    lugarImagen.alt = lugar.nombre;
+
+                    const lugarDescripcion = document.createElement('p');
+                    lugarDescripcion.textContent = lugar.descripcion;
+                    lugarDescripcion.className = 'descripcion';
+
+                    div.appendChild(lugarTexto);
+                    div.appendChild(lugarImagen);
+                    div.appendChild(lugarDescripcion);
+                    contenido.appendChild(div);
+                });
+
+                contenido.style.display = 'block'; // Mostrar el resultado
+            }
+        </script>
+
+
+        <section class="promotions">
+            <h2>Promociones</h2>
+            <!-- Aquí irían las promociones, imágenes, etc. -->
+        </section>
+
+        <section class="offers">
+            <div class="offer">
+                <h2>Explora El Mundo Desde Tu Ciudad</h2>
+                <p>Busca en cientos de webs de viajes y compara precios.</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2024, Hecho por Steven Quimi. Esperamos que haya sido de su agrado.</p>
+        </footer>
+
+        <script src="script.js"></script>
+    </body>
+
+
+    </html>
